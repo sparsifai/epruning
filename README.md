@@ -11,7 +11,7 @@ This page contains codes and description on the EDropout method.
 ## Datasets
 The following setup of benchmark datasets are used: 
 
-(i) Fashion-MNIST (gray images in 10 classes, 54k train, 6k validation, and 10k test) [^xiao2017]:footnote;
+(i) Fashion-MNIST (gray images in 10 classes, 54k train, 6k validation, and 10k test) [^xiao2017];
 
 (ii) Kuzushiji-MNIST (gray images in 10 classes, 54k train, 6k validation, and 10k test)~\citep{clanuwat2018deep}; 
 
@@ -46,3 +46,6 @@ The current version of the optimization phase is written in NumPy as a POC. A pa
 
 ## Citation
 The paper is submitted to Neurips 2020. Please check later.
+
+## References
+[^xiao2017]:footnote
