@@ -47,5 +47,12 @@ The current version of the optimization phase is written in NumPy as a POC. A pa
 ## Citation
 The paper is submitted to Neurips 2020. Please check later.
 
+Here is a footnote reference,[^1] and another.[^longnote]
+
+[^1]: Here is the footnote.
+
+
 ## References
+
 [^xiao2017]: footnote
+
