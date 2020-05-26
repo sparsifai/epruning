@@ -21,7 +21,7 @@ The following setup of benchmark datasets are used:
 
 (v) Flowers (102 flower categories; each class has between 40 and 258 images; 10 images from each class for validation and 10 for test). 
 
-The horizontal flip and Cutout augmentation methods are used for training on CIFAR and Flowers datasets. Input images are resized to $32\times32$ for ResNets and for $224\times224$ AlexNet and SqueezeNetv1.1. 
+The horizontal flip and Cutout augmentation methods are used for training on CIFAR and Flowers datasets. Input images are resized to 32x32 for ResNets and for 224x224 AlexNet and SqueezeNetv1.1. 
 
 ## Models
 ### ResNets
