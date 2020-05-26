@@ -11,9 +11,9 @@ This page contains codes and description on the EDropout method.
 ## Datasets
 The following setup of benchmark datasets are used: 
 
-(i) Fashion-MNIST (gray images in 10 classes, 54k train, 6k validation, and 10k test) [^xiao2017];
+(i) Fashion (gray images in 10 classes, 54k train, 6k validation, and 10k test) [^xiao2017];
 
-(ii) Kuzushiji-MNIST (gray images in 10 classes, 54k train, 6k validation, and 10k test)~\citep{clanuwat2018deep}; 
+(ii) Kuzushiji (gray images in 10 classes, 54k train, 6k validation, and 10k test)~\citep{clanuwat2018deep}; 
 
 (iii) CIFAR-10 (color images in 10 classes, 45k train, 5k validation, and 10k test)~\citep{krizhevsky2009learning};
 
@@ -41,18 +41,16 @@ The horizontal flip and Cutout~\citep{devries2017improved} augmentation methods 
 ## Results
 
 
+## Docker
+
+
 ## Parallel Implementation
 The current version of the optimization phase is written in NumPy as a POC. A parallel version will be implemented and added in PyTorch very soon.  
 
 ## Citation
 The paper is submitted to Neurips 2020. Please check later.
 
-Here is a footnote reference,[^1] and another.[^longnote]
-
-[^1]: Here is the footnote.
-
 
 ## References
 
-[^xiao2017]: footnote
 
