@@ -10,6 +10,7 @@ This page contains codes and description on the EDropout method.
 
 ## Datasets
 The following setup of benchmark datasets are used: 
+
 (i) Fashion-MNIST (gray images in 10 classes, 54k train, 6k validation, and 10k test)~\citep{xiao2017};
 
 (ii) Kuzushiji-MNIST (gray images in 10 classes, 54k train, 6k validation, and 10k test)~\citep{clanuwat2018deep}; 
@@ -30,6 +31,9 @@ The horizontal flip and Cutout~\citep{devries2017improved} augmentation methods 
 ### AlexNet
 
 ### Deep Compression
+
+## Hyperparameters
+
 
 ## Training
 
