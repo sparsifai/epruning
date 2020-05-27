@@ -32,6 +32,9 @@ The horizontal flip and Cutout augmentation methods are used for training on CIF
 
 ### Deep Compression
 
+### EDropout
+
+
 ## Hyperparameters
 
 
@@ -41,6 +44,16 @@ The horizontal flip and Cutout augmentation methods are used for training on CIF
 We have conducted a high level hyper-parameters tuning and found the following ones:
 
 - Learning rate: Initial leanring rate of 1 with adaptive step learning rate decaly with gamma 0.1 at every 50 epoch 
+- Optimizer: Adadelta with rho=0.9, eps=1e-06, weight_decay=0.00001
+- Batch-size: 128
+- Validation dataset: 10% of the training dataset selected randomly
+- Number of candidate states: 8
+- Early convergence threshold: 100
+- Number of epochs: 200
+- Initial probabilty of binary states: 0.5
+- Augmentation: CropOut for CIFAR and Flowers datasets
+
+Some hyper-parameters analysis are provided in the paper.
 
 
 ## Results
