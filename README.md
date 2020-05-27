@@ -47,6 +47,9 @@ The horizontal flip and Cutout augmentation methods are used for training on CIF
 ## Parallel Implementation
 The current version of the optimization phase is written in NumPy as a POC. A parallel version will be implemented and added in PyTorch very soon.  
 
+## Contact
+Please send your feedback and comments to sparsifai.ai@gmail.com
+
 ## Citation
 The paper is submitted to Neurips 2020. Please check later.
 
