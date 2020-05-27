@@ -38,6 +38,11 @@ The horizontal flip and Cutout augmentation methods are used for training on CIF
 ## Training
 
 
+We have conducted a high level hyper-parameters tuning and found the following ones:
+
+- Learning rate: Initial leanring rate of 1 with adaptive step learning rate decaly with gamma 0.1 at every 50 epoch 
+
+
 ## Results
 
 
