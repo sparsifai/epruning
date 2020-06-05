@@ -65,6 +65,7 @@ model = {'ising','simple'} # ising: edropout method; simple: original model
 
 ## Results
 ![alt text](https://github.com/sparsifai/edropout/blob/master/png/k.png)
+![alt text](https://github.com/sparsifai/edropout/blob/master/png/f.png)
 
 
 ## Docker
