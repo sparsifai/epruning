@@ -55,6 +55,13 @@ We have conducted a high level hyper-parameters tuning and found the following o
 
 Some hyper-parameters analysis are provided in the paper.
 
+### How to Train
+python3 edropout.py
+
+Parameters inside edropout.py:
+dataset = {'fashion','kuzushiji','cifar10','cifar100','flowers'}    
+nnmodel = {'resnet18','resnet34','resnet50','resnet101'}   
+model = {'ising','simple'} # ising: edropout method; simple: original model   
 
 ## Results
 
