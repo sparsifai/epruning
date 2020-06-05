@@ -64,7 +64,7 @@ nnmodel = {'resnet18','resnet34','resnet50','resnet101'}
 model = {'ising','simple'} # ising: edropout method; simple: original model   
 
 ## Results
-![alt text](https://github.com/sparsifai/edropout/blob/master/png/k.png)
+![alt text](https://github.com/sparsifai/edropout/blob/master/png/k.png)  <!-- .element height="50%" width="50%" -->
 
 
 ## Docker
