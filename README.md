@@ -117,15 +117,6 @@ Please send your feedback and comments to sparsifai.ai@gmail.com
 ## Citation
 The paper is available at: https://arxiv.org/abs/2006.04270
 
-@misc{salehinejad2020edropout,     
-    title={EDropout: Energy-Based Dropout and Pruning of Deep Neural Networks},     
-    author={Hojjat Salehinejad and Shahrokh Valaee},     
-    year={2020},     
-    eprint={2006.04270},      
-    archivePrefix={arXiv},     
-    primaryClass={cs.LG}     
-    
-}
 
 
 ## References
