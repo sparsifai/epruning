@@ -114,7 +114,16 @@ Again, we need to emphasize that this is a quick implementation and a parallel v
 Please send your feedback and comments to sparsifai.ai@gmail.com
 
 ## Citation
-The paper is submitted to Neurips 2020. Please check later.
+The paper is available at: https://arxiv.org/abs/2006.04270
+
+@misc{salehinejad2020edropout,
+    title={EDropout: Energy-Based Dropout and Pruning of Deep Neural Networks},
+    author={Hojjat Salehinejad and Shahrokh Valaee},
+    year={2020},
+    eprint={2006.04270},
+    archivePrefix={arXiv},
+    primaryClass={cs.LG}
+}
 
 
 ## References
