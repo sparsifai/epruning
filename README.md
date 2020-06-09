@@ -87,10 +87,8 @@ model = {'ising','simple'} # ising: edropout method; simple: original model
 
 ## Results
 The results are average of five independant executions. More results are provided in the paper.
-![alt text](https://github.com/sparsifai/edropout/blob/master/png/k.png)
-![alt text](https://github.com/sparsifai/edropout/blob/master/png/f.png)
-
-<img src="https://github.com/sparsifai/edropout/blob/master/png/f.png" data-canonical-src="https://github.com/sparsifai/edropout/blob/master/png/f.png" width="200" height="400" />
+<img src="https://github.com/sparsifai/edropout/blob/master/png/k.png" data-canonical-src="https://github.com/sparsifai/edropout/blob/master/png/k.png" width="400" height="400" />
+<img src="https://github.com/sparsifai/edropout/blob/master/png/f.png" data-canonical-src="https://github.com/sparsifai/edropout/blob/master/png/f.png" width="400" height="400" />
 ## Docker
 A docker container will be pushed asap.
 
