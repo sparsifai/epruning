@@ -375,63 +375,43 @@ def wide_resnet101_2(s_input_channel,n_classes,pretrained=False, progress=True, 
                    pretrained, progress,s_input_channel,n_classes, **kwargs)
 
 
-
+import time
 
 def gradient_mask(model,best_stateI,device,nnmodel):
-
-    # ss = model._modules['conv1'].grad
-    # print(len(model.parameters()))
-    # for indx, p in enumerate(model.parameters()):
-    #     print(indx,p.shape)
-    # 0: 'conv1'
-    if nnmodel=='resnet18':
-        convs_indx = [i for i in range(3,58,3)]
-        # convs1x1 = [21,36,51]
-        last = 60
-    elif nnmodel=='resnet50':
-        convs_indx = [i for i in range(3,157,3)]
-        # convs1x1 = [21,36,51]
-        last = 159
-    # print(convs_indx)
-    # 60: 'linear'
-    # kkj
     c = 0
-    kk = model.state_dict()
-    keys = [i for i in model.state_dict().keys() if 'weight' in i or 'bias' in i]
+    for name, p in model.named_parameters():
+        if p.requires_grad:
+            # print(name,p.shape)
+            if 'conv' in name:
+                shp = p.grad.shape
+                s = shp[0]
+                msk = np.zeros((shp))
+                states_ = best_stateI[c:c+s]
+                for ind in range(s):
+                    msk[ind,:,:,:] = states_[ind]
+                p.grad = p.grad*torch.from_numpy(msk).float().to(device)
+                c+=s
+                continue
+            elif 'bn' in name: # s and states_ are captures in conv if
+                msk = states_ #np.zeros((shp))
+                p.grad = p.grad*torch.from_numpy(msk).float().to(device)
+            elif 'downsample' in name:
+                if p.numel()==s:
+                    msk = states_ #np.zeros((shp))
+                    p.grad = p.grad*torch.from_numpy(msk).float().to(device)
 
-    for indx, p in enumerate(model.parameters()):
-        # print(indx,p.shape,keys[indx])
-
-        shp = p.grad.shape
-        # if indx == 0:
-        #     s = p.grad.shape[0]
-        #     msk = np.zeros((shp))
-        #     states_ = best_stateI[c:c+s]
-        #     for ind in range(s):
-        #         msk[ind,:,:,:] = states_[ind]
-        #     p.grad = p.grad*torch.from_numpy(msk).float().to(device)
-        #     # print(indx,s,c,p.grad.shape,best_stateI.shape)
-        #     c+=s
-
-        if indx == last:
-            s = p.grad.shape[1]
-            msk = np.zeros((shp))
-            states_ = best_stateI[c:c+s]
-            for ind in range(s):
-                msk[:,ind] = states_[ind]
-            p.grad = p.grad*torch.from_numpy(msk).float().to(device)
-            # print(indx,s,c,p.grad.shape,best_stateI.shape)
-            c+=s
-
-        elif 'conv2' in keys[indx]: #(indx in convs_indx): # and (indx not in convs1x1):
-            s = p.grad.shape[0]
-            msk = np.zeros((shp))
-            states_ = best_stateI[c:c+s]
-            # print(c,s,len(states_),len(best_stateI))
-
-            for ind in range(s):
-                msk[ind,:,:,:] = states_[ind]
-            p.grad = p.grad*torch.from_numpy(msk).float().to(device)
-            # print(indx,s,c,p.grad.shape,best_stateI.shape)
-            c+=s
-
+                else:
+                    shp = p.grad.shape
+                    msk = np.zeros((shp))
+                    for ind in range(s):
+                        msk[ind,:,:,:] = states_[ind]
+                    p.grad = p.grad*torch.from_numpy(msk).float().to(device)
+            elif 'fc.weight' in name:
+                shp = p.grad.shape
+                s = shp[1]
+                msk = np.zeros((shp))
+                states_ = best_stateI[c:c+s]
+                for ind in range(s):
+                    msk[:,ind] = states_[ind]
+                p.grad = p.grad*torch.from_numpy(msk).float().to(device)
+                c+=s
