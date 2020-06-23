@@ -589,11 +589,11 @@ def train_ising(args,pretrained_name,pretrained_name_save,stopcounter, input_siz
                     with torch.no_grad():
                         if batch_idx==0 and epoch==1:
                             states_reshaped = state_reshaper(device,NS,states_init,network_size,args)
-                            # entrop_sig, fcbias_sig, states_loss, weigts_mean_kerneled, backup_weights = pnetwork_sensory(args,model,data,target,device,NS,stopcounter,states_reshaped,network_size,D,D_Conv2d, D_fc,n_classes,states_init)
-                            # cost_states, cost_all_one = ising_cost(states_init,NS,D, D_Conv2d, D_fc,entrop_sig, fcbias_sig, states_loss, weigts_mean_kerneled,network_size)    
+                            entrop_sig, fcbias_sig, states_loss, weigts_mean_kerneled, backup_weights = pnetwork_sensory(args,model,data,target,device,NS,stopcounter,states_reshaped,network_size,D,D_Conv2d, D_fc,n_classes,states_init)
+                            cost_states, cost_all_one = ising_cost(states_init,NS,D, D_Conv2d, D_fc,entrop_sig, fcbias_sig, states_loss, weigts_mean_kerneled,network_size)    
                             
-                            backup_weights = weight_backer(model,network_size)
-                            cost_states, cost_all_one = ising_cost(args,model,data,target,device,states_init,NS,D, D_Conv2d, D_fc,network_size)        
+#                             backup_weights = weight_backer(model,network_size)
+#                             cost_states, cost_all_one = ising_cost(args,model,data,target,device,states_init,NS,D, D_Conv2d, D_fc,network_size)        
                             states = states_init
                             best_state = np.asarray(states[np.argmin(cost_states),:])
 
@@ -601,10 +601,10 @@ def train_ising(args,pretrained_name,pretrained_name_save,stopcounter, input_siz
                             # print('init',cost_states)
                         new_states = evolution(states,NS,D,best_state)
                         states_reshaped = state_reshaper(device,NS,new_states,network_size,args)
-                        # entrop_sig, fcbias_sig, states_loss, weigts_mean_kerneled, backup_weights = pnetwork_sensory(args,model,data,target,device,NS,stopcounter,states_reshaped,network_size,D,D_Conv2d, D_fc,n_classes,new_states)
-                        # cost_new_states, cost_all_one = ising_cost(states,NS,D, D_Conv2d, D_fc,entrop_sig, fcbias_sig, states_loss, weigts_mean_kerneled,network_size)            
-                        backup_weights = weight_backer(model,network_size)
-                        cost_states, cost_all_one = ising_cost(args,model,data,target,device,states,NS,D, D_Conv2d, D_fc,network_size) 
+                        entrop_sig, fcbias_sig, states_loss, weigts_mean_kerneled, backup_weights = pnetwork_sensory(args,model,data,target,device,NS,stopcounter,states_reshaped,network_size,D,D_Conv2d, D_fc,n_classes,new_states)
+                        cost_new_states, cost_all_one = ising_cost(states,NS,D, D_Conv2d, D_fc,entrop_sig, fcbias_sig, states_loss, weigts_mean_kerneled,network_size)            
+#                         backup_weights = weight_backer(model,network_size)
+#                         cost_states, cost_all_one = ising_cost(args,model,data,target,device,states,NS,D, D_Conv2d, D_fc,network_size) 
                         states, cost_states, best_state, cost_best_state, avg_cost_states = selection(states, new_states, cost_states, cost_new_states, NS, D)
 
             ## Collect evolution cost
