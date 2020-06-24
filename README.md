@@ -1,7 +1,7 @@
 # EDropout
 Energy-based Dropout and Pruning of Deep Neural Networks
 
-This page contains codes and description on the EDropout method.
+This page contains codes and description on the EDropout method. Note this is not the official code. 
 
 ## Requirements
 - Python 3.7+
