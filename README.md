@@ -1,4 +1,4 @@
-# Update: The code is temprarly unavailable.
+# Update: The official code will be published after publication of the paper.
 
 # EDropout
 Energy-based Dropout and Pruning of Deep Neural Networks
