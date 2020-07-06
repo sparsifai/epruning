@@ -665,7 +665,7 @@ def train_ising(args,pretrained_name,pretrained_name_save,stopcounter, input_siz
             weight_restore(model, network_size, backup_weights)
 
             optimizer.step()
-            optimizer.zero_grad() ######TODOm
+#             optimizer.zero_grad() ######TODOm
 
             # Break
             counter+=1
