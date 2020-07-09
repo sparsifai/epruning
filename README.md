@@ -98,7 +98,7 @@ The results are average of five independant executions. More results are provide
 A docker container will be pushed asap.
 
 ## Parallel Implementation
-The current version of the optimization phase is written in NumPy as a POC for fast implementation. A parallel version will be implemented and added in PyTorch very soon. The executing time using numpy on a single RTX GPU on the Flowers dataset with 8 candidate state vectors is as follows:
+The current version of the optimization phase is written in NumPy as a POC for fast implementation. The running time is slower than the original model. A parallel version will be implemented very soon. The executing time using numpy on a single RTX GPU on the Flowers dataset with 8 candidate state vectors is as follows:
 
 | Model        | EDropout/Original  | Number of States
 | ------------- |:-------------:| -----:|
@@ -110,7 +110,7 @@ AlexNet | 28.97x | 18662
 SqueezeNet | 1.33x| 3558
 
 
-Again, we need to emphasize that this is a quick implementation and a parallel version will be uploaded asap. 
+Again, we need to emphasize that this is a quick implementation and a parallel version will be uploaded asap!
 
 
 ## Contact
