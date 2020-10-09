@@ -1,8 +1,8 @@
 
-# EDropout
+# EPruning (EDropout)
 Energy-based Dropout and Pruning of Deep Neural Networks
 
-This page contains codes and description on the EDropout method. Note this is not the official code. 
+This page contains codes and description on the EPruning method. Note this is not the official code. 
 
 ## Requirements
 - Python 3.7+
@@ -99,7 +99,7 @@ A docker container will be pushed asap.
 ## Parallel Implementation
 The current version of the optimization phase is written in NumPy as a POC for fast implementation. The running time is slower than the original model. A parallel version will be implemented very soon. The executing time using numpy on a single RTX GPU on the Flowers dataset with 8 candidate state vectors is as follows:
 
-| Model        | EDropout/Original  | Number of States
+| Model        | EPruning/Original  | Number of States
 | ------------- |:-------------:| -----:|
 | resnet18     | 17.21x | 6208 |
 | resnet34     | 25.12x      | 9920  |
